@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <title>Suggest Word</title>
+    <body>
+        <h1>Suggest word</h1>
+    </body>
+
+    Source Node: 
+    <select id = "source">
+        {% for vertex in vertices %}
+            <option value="{{ vertex.id }}">{{ vertex.id }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    Destination Node:
+    <select id = "dest">
+        {% for vertex in vertices %}
+            <option value="{{ vertex.id }}">{{ vertex.id }}</option>
+        {% endfor %}
+    </select>
+    <button id="submit">Submit</button>
+    <br>
+    Distance: <div id="dist"></div>
+    <br>
+    Path Taken: <div id="path"></div>
+    
+    {% load static %}
+    <script src="{% static "find_path/index.js" %}"></script>
+</html> 
